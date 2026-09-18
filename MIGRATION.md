@@ -217,7 +217,7 @@ live merchant cart → explicit user confirmation → start_prava_checkout
 - A merchant outcome can only be reported against the checkout **this session started** —
   the session id and txn ref are read from stored state, not from the caller.
 
-**One deliberate deviation.** `backend-node-legacy/src/routes/prava.js:128` logged the full
+**One deliberate deviation.** The Node build's `src/routes/prava.js` logged the full
 PAN and dynamic CVV in cleartext under `[Prava DEBUG minted credential]`. The brief forbids
 logging payment credentials, so the Python version keeps the trace (same trigger, same
 dedupe, same `source` tag, same ids for support) but masks the card number to its last four
@@ -378,5 +378,6 @@ Honest list. Nothing below was faked or asserted without evidence.
   tools, so `npm install` fails. Contract equivalence was therefore established by reading
   the Express source and encoding it as tests, not by diffing two live servers. (A side
   benefit of the migration: the Python backend has no native build step.)
-- **`backend-node-legacy/`** is retained as reference. It can be deleted once you are
-  satisfied; it is kept because this working copy has no git history to recover it from.
+- **The original Node backend is no longer in this repo.** It was kept alongside the
+  Python one during the migration and removed once every flow had been verified. It
+  remains available in the upstream repository this project was forked from.

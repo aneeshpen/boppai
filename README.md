@@ -1,14 +1,8 @@
-# Boppai (Hackathon Winner: Best Agentic User Experience)
-
-## 🏆 [Award announcement by Prava Payments on X](https://x.com/pravapayments/status/2086103921765048605?s=20)
+# Boppai
 
 ![Boppai banner](readme-banner.png)
 
 An AI agent for meal planning and ordering groceries.
-
-## Full Demo Video
-
-Check it out - [Boppai demo](https://www.youtube.com/watch?v=cx07-cYtqLg)
 
 ## The Problem Boppai Solves
 
@@ -198,10 +192,8 @@ backend/              Python + FastAPI (the harness)
   prompts/            the conductor + basket-filler system prompts
   tests/              137 tests
 frontend/             React + Vite + Tailwind (unchanged by the migration)
-backend-node-legacy/  the original Node/Express backend, kept for reference
 MIGRATION.md          what changed moving Node -> Python, and why
 ```
 
-> `backend-node-legacy/` is the superseded implementation, retained for comparison. It no
-> longer runs on Node 24 (`better-sqlite3` has no prebuilt binary for it) and can be
-> deleted once you're happy. See [MIGRATION.md](MIGRATION.md) for the full story.
+> Boppai's backend was originally Node/Express and was reimplemented in Python/FastAPI.
+> See [MIGRATION.md](MIGRATION.md) for what changed and why.
