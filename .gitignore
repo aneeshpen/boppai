@@ -1,0 +1,28 @@
+# Local knowledge base (working notes, not shipped)
+knowledge/
+
+# Secrets -- never commit
+.env
+.env.local
+*.env
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+
+# Runtime state (per-user data: transcripts, profile, sessions)
+backend/data/
+backend/sessions/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

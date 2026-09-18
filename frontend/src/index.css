@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-bp-linen: #faf1ea;
+  --color-bp-flamingo: #ef5927;
+  --color-bp-jambalaya: #613711;
+  --color-bp-geraldine: #faa486;
+  --color-bp-domino: #94795e;
+  --color-bp-polo-blue: #94bacd;
+  --color-bp-marshland: #030402;
+  --color-bp-blue-chill: #138aa0;
+  --color-bp-conifer: #bdd341;
+}
+
+/* DM Sans is the warm, clean companion to the groovy Nighty display face —
+   used for supporting headings/labels so Nighty stays the star. */
+
+@font-face {
+  font-family: 'Nighty';
+  src: url('./assets/fonts/Nightydemo.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Paper grain — a fine, tactile film-grain texture for the chat surface so the
+   linen gutters read as warm paper instead of dead space. It's a self-contained
+   inline SVG (fractalNoise → desaturated), no image files. Painted on a fixed,
+   pointer-events-none layer at low opacity BEHIND the chat content. Tune the
+   feel with two knobs: baseFrequency (higher = finer grain) on the SVG, and the
+   layer's opacity in Workspace (currently ~6%). */
+.bp-paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='140'%20height='140'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.77'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Boppai rocking side-to-side while he thinks. Uneven stops keep it playful
+   ("left, right, here and there") instead of a metronome sway; the origin
+   near his feet makes it read as rocking on the ground. */
+@keyframes boppai-wobble {
+  0%   { transform: translate(-14%, 0)    rotate(-7deg); }
+  30%  { transform: translate(10%, -16%)  rotate(5deg); }
+  55%  { transform: translate(-6%, 4%)    rotate(-4deg); }
+  80%  { transform: translate(12%, -12%)  rotate(6deg); }
+  100% { transform: translate(-14%, 0)    rotate(-7deg); }
+}
+.animate-boppai-wobble {
+  animation: boppai-wobble 1.8s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-boppai-wobble { animation: none; }
+}

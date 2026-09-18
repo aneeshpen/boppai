@@ -1,0 +1,20 @@
+# Boppai harness backend — Python dependencies.
+#
+# Mirrors the Node backend's dependency roles one-for-one:
+#   express          -> fastapi + uvicorn
+#   zod              -> pydantic
+#   dotenv           -> pydantic-settings
+#   node fetch       -> httpx
+#   @modelcontextprotocol/sdk -> mcp
+#   better-sqlite3   -> stdlib sqlite3 (no dependency needed)
+
+fastapi>=0.115
+uvicorn[standard]>=0.34
+pydantic>=2.10
+pydantic-settings>=2.7
+httpx>=0.28
+mcp>=2.2,<3
+
+# tests
+pytest>=8.3
+pytest-asyncio>=0.25
