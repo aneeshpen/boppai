@@ -4,7 +4,7 @@
 
 An AI agent for meal planning and ordering groceries.
 
-## The Problem Boppai Solves
+## The Problem Boppai Solves :
 
 People want to eat healthier, but planning meals, checking nutrition, and buying
 the right groceries every week takes time and effort.
