@@ -1,7 +1,4 @@
 # Boppai
-
-![Boppai banner](readme-banner.png)
-
 An AI agent for meal planning and ordering groceries.
 
 ## The Problem Boppai Solves :
